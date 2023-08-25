@@ -1,0 +1,25 @@
+create env 
+-------------------------------
+python -m venv venv
+
+connect env
+-------------------------------
+venv\Scripts\activate
+
+disconnect env
+-------------------------------
+deactivate
+
+
+
+packages
+-------------------------------
+pip install flask
+
+
+run 
+--------------------------------
+python main.py
+
+
+
