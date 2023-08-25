@@ -1,4 +1,3 @@
-import socket
 
 from flask import Flask
 
@@ -18,6 +17,6 @@ app.register_blueprint(user_bp)
 if __name__ == '__main__':
     startDb()
     add_sample_data()
-    #app.run(debug=True)
-    host = socket.gethostbyname(socket.gethostname())
-    app.run(host=host, port=5000, debug=True)
+    app.run(debug=True)
+    #host = socket.gethostbyname(socket.gethostname())
+    #app.run(host=host, port=5000, debug=True)
