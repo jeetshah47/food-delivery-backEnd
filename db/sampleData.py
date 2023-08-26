@@ -7,10 +7,10 @@ def add_sample_data():
     cursor = db.cursor()
 
     restaurants_data = [
-        (str(uuid.uuid4()), "kfc", "Finger Lickin' Good", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/image1.png", "kfc1@example.com", "kfc_password"),
-        (str(uuid.uuid4()), "pizzahut", "Gather 'Round the Good Stuff", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/image2.png", "ph@example.com", "ph_password"),
-        (str(uuid.uuid4()), "Mc Donalds", "American - Burgers - Fast Food", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/image3.png", "mc@example.com", "ph_password"),
-        (str(uuid.uuid4()), "Uncle Pizza", "True Mexican", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/image3.png", "uc@example.com", "ph_password")
+        (str(uuid.uuid4()), "kfc", "Finger Lickin' Good", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/image1.png", "kfc1@example.com", "kfc_password", "Vadodara"),
+        (str(uuid.uuid4()), "pizzahut", "Gather 'Round the Good Stuff", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/image2.png", "ph@example.com", "ph_password", "Vadodara"),
+        (str(uuid.uuid4()), "McDonalds", "American - Burgers - Fast Food", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/image3.png", "mc@example.com", "mc_password", "Vadodara"),
+        (str(uuid.uuid4()), "UnclePizza", "True Mexican", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/image3.png", "uc@example.com", "uc_password", "Vadodara")
     ]
 
     items_data = [
@@ -28,7 +28,7 @@ def add_sample_data():
     ]
 
     for record in restaurants_data:
-        cursor.execute("INSERT INTO restaurants (id, name, caption, logoUrl, email, password) VALUES (?, ?, ?, ?, ?, ?)", record)
+        cursor.execute("INSERT INTO restaurants (id, name, caption, logoUrl, email, password, city) VALUES (?, ?, ?, ?, ?, ?, ?)", record)
 
     for record in items_data:
         cursor.execute("INSERT INTO items (id, name, price, type, imgUrl, nutritionalUrl, restaurant_id) VALUES (?, ?, ?, ?, ?, ?, ?)", record)

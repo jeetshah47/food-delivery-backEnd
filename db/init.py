@@ -23,7 +23,8 @@ def create_restaurants_table():
         caption TEXT,
         logoUrl TEXT,
         email TEXT UNIQUE,
-        password TEXT
+        password TEXT,
+        city TEXT 
     )''')
 
     db.commit()
