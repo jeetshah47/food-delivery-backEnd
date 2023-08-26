@@ -5,6 +5,7 @@ def startDb():
     create_restaurants_table()
     create_items_table()
     create_users_table()
+    create_orders_table()
 
 
 def create_restaurants_table():
@@ -74,6 +75,32 @@ def create_users_table():
         last_name TEXT,
         ph_number TEXT,
         address TEXT
+    )''')
+
+    db.commit()
+    db.close()
+
+
+def create_orders_table():
+    db = sqlite3.connect("foodDelivery.db")
+    cursor = db.cursor()
+
+    cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='orders'")
+    table_exists = cursor.fetchone()
+
+    if table_exists:
+        cursor.execute("DROP TABLE orders")
+
+    cursor.execute('''CREATE TABLE orders (
+        id TEXT PRIMARY KEY,
+        user_id TEXT,
+        items TEXT,
+        restaurant_id TEXT,
+        createdDateTime TEXT,
+        deliveredDateTime TEXT,
+        status TEXT,
+        FOREIGN KEY (user_id) REFERENCES users (id),
+        FOREIGN KEY (restaurant_id) REFERENCES restaurants (id)
     )''')
 
     db.commit()
