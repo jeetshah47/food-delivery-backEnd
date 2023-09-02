@@ -42,14 +42,6 @@ def add_sample_data():
     for record in users_data:
         cursor.execute("INSERT INTO users (id, email, password, first_name, last_name, ph_number, address) VALUES (?, ?, ?, ?, ?, ?, ?)", record)
 
-    orders_data = [
-        (str(uuid.uuid4()), users_data[0][0], json.dumps([items_data[0][0], items_data[1][0]]), restaurants_data[0][0], "2023-08-26 10:00:00", None, "Created"),
-        (str(uuid.uuid4()), users_data[1][0], json.dumps([items_data[2][0], items_data[3][0]]), restaurants_data[1][0], "2023-08-26 12:30:00", None, "Created"),
-    ]
-
-    for record in orders_data:
-        cursor.execute("INSERT INTO orders (id, user_id, items, restaurant_id, createdDateTime, deliveredDateTime, status) VALUES (?, ?, ?, ?, ?, ?, ?)", record)
-
     db.commit()
     db.close()
 
