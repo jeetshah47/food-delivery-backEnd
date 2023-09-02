@@ -414,6 +414,38 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "update status of order",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"Accepted\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/order/{{order_item_id}}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"order",
+						"{{order_item_id}}"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"variable": [

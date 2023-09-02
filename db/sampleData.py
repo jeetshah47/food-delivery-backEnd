@@ -15,17 +15,17 @@ def add_sample_data():
     ]
 
     items_data = [
-        (str(uuid.uuid4()), "Margherita Pizza", 12.99, "veg", "https://example.com/margherita_img.png", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/food%2Fpizzabg.png?alt=media", restaurants_data[0][0]),
-        (str(uuid.uuid4()), "Spicy Chicken Wings", 9.99, "nonVeg", "https://example.com/chicken_wings_img.png", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/food%2Ffood2.jpg?alt=media", restaurants_data[0][0]),
+        (str(uuid.uuid4()), "Margherita Pizza", 12.99, "veg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/food%2Fpizzabg.png?alt=media","https://example.com/margherita_img.png", restaurants_data[0][0]),
+        (str(uuid.uuid4()), "Spicy Chicken Wings", 9.99, "nonVeg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/food%2Ffood2.jpg?alt=media","https://example.com/margherita_img.png", restaurants_data[0][0]),
 
-        (str(uuid.uuid4()), "Classic Pepperoni Pizza", 14.99, "nonVeg", "https://example.com/pepperoni_img.png", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/food%2Ffood3.jpg?alt=media", restaurants_data[1][0]),
-        (str(uuid.uuid4()), "Veggie Supreme Pizza", 11.99, "veg", "https://example.com/veggie_supreme_img.png", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/food%2Ffood2.jpg?alt=media", restaurants_data[1][0]),
+        (str(uuid.uuid4()), "Classic Pepperoni Pizza", 14.99, "nonVeg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/food%2Ffood3.jpg?alt=media","https://example.com/margherita_img.png", restaurants_data[1][0]),
+        (str(uuid.uuid4()), "Veggie Supreme Pizza", 11.99, "veg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/food%2Ffood2.jpg?alt=media","https://example.com/margherita_img.png", restaurants_data[1][0]),
 
-        (str(uuid.uuid4()), "cold coffe", 14.99, "nonVeg", "https://example.com/pepperoni_img.png", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/food%2Ffood3.jpg?alt=media", restaurants_data[2][0]),
-        (str(uuid.uuid4()), "gold corn pizza", 11.99, "veg", "https://example.com/veggie_supreme_img.png", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/food%2Ffood3.jpg?alt=media", restaurants_data[2][0]),
+        (str(uuid.uuid4()), "cold coffe", 14.99, "nonVeg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/food%2Ffood3.jpg?alt=media","https://example.com/margherita_img.png", restaurants_data[2][0]),
+        (str(uuid.uuid4()), "gold corn pizza", 11.99, "veg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/food%2Ffood3.jpg?alt=media","https://example.com/margherita_img.png", restaurants_data[2][0]),
 
-        (str(uuid.uuid4()), "fried wings", 14.99, "nonVeg", "https://example.com/pepperoni_img.png", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/food%2Ffood3.jpg?alt=media", restaurants_data[3][0]),
-        (str(uuid.uuid4()), "bbq wing", 11.99, "veg", "https://example.com/veggie_supreme_img.png", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/food%2Ffood3.jpg?alt=media", restaurants_data[3][0]),
+        (str(uuid.uuid4()), "fried wings", 14.99, "nonVeg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/food%2Ffood3.jpg?alt=media","https://example.com/margherita_img.png", restaurants_data[3][0]),
+        (str(uuid.uuid4()), "bbq wing", 11.99, "veg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/food%2Ffood3.jpg?alt=media", "https://example.com/margherita_img.png", restaurants_data[3][0]),
     ]
 
     for record in restaurants_data:
