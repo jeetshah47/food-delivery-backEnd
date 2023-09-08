@@ -7,25 +7,77 @@ def add_sample_data():
     db = sqlite3.connect("foodDelivery.db")
     cursor = db.cursor()
 
+    nu = "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fnutrition.jpg?alt=media"
+    d1 = "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fd1.png?alt=media"
+    d2 = "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fd2.png?alt=media"
+    d3 = "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fd3.png?alt=media"
+    d4 = "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fd4.png?alt=media"
+
+    m1 = "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fm1.png?alt=media"
+    m2 = "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fm2.png?alt=media"
+    m3 = "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fm3.png?alt=media"
+    m4 = "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fm4.png?alt=media"
+
+
     restaurants_data = [
-        (str(uuid.uuid4()), "kfc", "Finger Lickin' Good", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/image1.png", "kfc1@example.com", "kfc_password", "Vadodara"),
-        (str(uuid.uuid4()), "pizzahut", "Gather 'Round the Good Stuff", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/image2.png", "ph@example.com", "ph_password", "Vadodara"),
-        (str(uuid.uuid4()), "McDonalds", "American - Burgers - Fast Food", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/image3.png", "mc@example.com", "mc_password", "Vadodara"),
-        (str(uuid.uuid4()), "UnclePizza", "True Mexican", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/image3.png", "uc@example.com", "uc_password", "Vadodara")
+        (str(uuid.uuid4()), "KFC", "Finger Lickin' Good", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fkfc_log.png?alt=media", "kfcVadodara@gmail.com", "kfcVadodara", "Vadodara"),
+        (str(uuid.uuid4()), "Dominos", "Gather 'Round the Good Stuff", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2FDominos_logo.png?alt=media", "dominosVadodara@example.com", "dominosVadodara", "Vadodara"),
+        (str(uuid.uuid4()), "McDonalds", "American - Burgers - Fast Food", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2FMcDonald_logo.png?alt=media", "mcdonaldsVadodara@example.com", "mcdonaldsVadodara", "Vadodara"),
+
+        (str(uuid.uuid4()), "KFC", "Finger Lickin' Good", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fkfc_log.png?alt=media", "kfcSurat@example.com", "kfcSurat", "Surat"),
+        (str(uuid.uuid4()), "Dominos", "Gather 'Round the Good Stuff", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2FDominos_logo.png?alt=media", "dominosSurat@example.com", "dominosSurat", "Surat"),
+        (str(uuid.uuid4()), "McDonalds", "American - Burgers - Fast Food", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2FMcDonald_logo.png?alt=media", "mcdonaldsSurat@example.com", "mcdonaldsSurat", "Surat"),
+
+        (str(uuid.uuid4()), "KFC", "Finger Lickin' Good", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fkfc_log.png?alt=media", "kfcAhmedabad@example.com", "kfcAhmedabad", "Ahmedabad"),
+        (str(uuid.uuid4()), "Dominos", "Gather 'Round the Good Stuff", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2FDominos_logo.png?alt=media", "dominosAhmedabad@example.com", "dominosAhmedabad", "Ahmedabad"),
+        (str(uuid.uuid4()), "McDonalds", "American - Burgers - Fast Food", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2FMcDonald_logo.png?alt=media", "mcdonaldsAhmedabad@example.com", "mcdonaldsAhmedabad", "Ahmedabad")
     ]
 
     items_data = [
-        (str(uuid.uuid4()), "Margherita Pizza", 12.99, "veg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/food%2Fpizzabg.png?alt=media","https://example.com/margherita_img.png", restaurants_data[0][0]),
-        (str(uuid.uuid4()), "Spicy Chicken Wings", 9.99, "nonVeg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/food%2Ffood2.jpg?alt=media","https://example.com/margherita_img.png", restaurants_data[0][0]),
+        (str(uuid.uuid4()), "Peri Peri 10 Leg Pc & 4 Dips", 948.57, "nonVeg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fkfc1.png?alt=media","https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fnutrition.jpg?alt=media", restaurants_data[0][0]),
+        (str(uuid.uuid4()), "Chicken Longer Burger & 2 Strips Combo", 219.05, "nonVeg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fkfc2.png?alt=media","https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fnutrition.jpg?alt=media", restaurants_data[0][0]),
+        (str(uuid.uuid4()), "Double Chicken Roll & Pepsi Combo", 225.71, "nonVeg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fkfc3.png?alt=media","https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fnutrition.jpg?alt=media", restaurants_data[0][0]),
+        (str(uuid.uuid4()), "The Allu Arjun Combo", 448.57, "nonVeg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fkfc4.png?alt=media","https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fnutrition.jpg?alt=media", restaurants_data[0][0]),
 
-        (str(uuid.uuid4()), "Classic Pepperoni Pizza", 14.99, "nonVeg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/food%2Ffood3.jpg?alt=media","https://example.com/margherita_img.png", restaurants_data[1][0]),
-        (str(uuid.uuid4()), "Veggie Supreme Pizza", 11.99, "veg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/food%2Ffood2.jpg?alt=media","https://example.com/margherita_img.png", restaurants_data[1][0]),
+        (str(uuid.uuid4()), "Peri Peri 10 Leg Pc & 4 Dips", 948.57, "nonVeg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fkfc1.png?alt=media","https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fnutrition.jpg?alt=media", restaurants_data[3][0]),
+        (str(uuid.uuid4()), "Chicken Longer Burger & 2 Strips Combo", 219.05, "nonVeg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fkfc2.png?alt=media","https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fnutrition.jpg?alt=media", restaurants_data[3][0]),
+        (str(uuid.uuid4()), "Double Chicken Roll & Pepsi Combo", 225.71, "nonVeg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fkfc3.png?alt=media","https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fnutrition.jpg?alt=media", restaurants_data[3][0]),
+        (str(uuid.uuid4()), "The Allu Arjun Combo", 448.57, "nonVeg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fkfc4.png?alt=media","https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fnutrition.jpg?alt=media", restaurants_data[3][0]),
 
-        (str(uuid.uuid4()), "cold coffe", 14.99, "nonVeg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/food%2Ffood3.jpg?alt=media","https://example.com/margherita_img.png", restaurants_data[2][0]),
-        (str(uuid.uuid4()), "gold corn pizza", 11.99, "veg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/food%2Ffood3.jpg?alt=media","https://example.com/margherita_img.png", restaurants_data[2][0]),
+        (str(uuid.uuid4()), "Peri Peri 10 Leg Pc & 4 Dips", 948.57, "nonVeg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fkfc1.png?alt=media","https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fnutrition.jpg?alt=media", restaurants_data[6][0]),
+        (str(uuid.uuid4()), "Chicken Longer Burger & 2 Strips Combo", 219.05, "nonVeg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fkfc2.png?alt=media","https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fnutrition.jpg?alt=media", restaurants_data[6][0]),
+        (str(uuid.uuid4()), "Double Chicken Roll & Pepsi Combo", 225.71, "nonVeg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fkfc3.png?alt=media","https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fnutrition.jpg?alt=media", restaurants_data[6][0]),
+        (str(uuid.uuid4()), "The Allu Arjun Combo", 448.57, "nonVeg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fkfc4.png?alt=media","https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/restaurant%2Fnutrition.jpg?alt=media", restaurants_data[6][0]),
 
-        (str(uuid.uuid4()), "fried wings", 14.99, "nonVeg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/food%2Ffood3.jpg?alt=media","https://example.com/margherita_img.png", restaurants_data[3][0]),
-        (str(uuid.uuid4()), "bbq wing", 11.99, "veg", "https://firebasestorage.googleapis.com/v0/b/foodys-34dd3.appspot.com/o/food%2Ffood3.jpg?alt=media", "https://example.com/margherita_img.png", restaurants_data[3][0]),
+        (str(uuid.uuid4()), "FARM HOUSE", 300.00, "Veg", d1, nu, restaurants_data[1][0]),
+        (str(uuid.uuid4()), "PEPPY PANEER", 350.00, "Veg", d2, nu, restaurants_data[1][0]),
+        (str(uuid.uuid4()), "MEXICAN GREEN WAVE", 500.00, "Veg", d3, nu, restaurants_data[1][0]),
+        (str(uuid.uuid4()), "DELUXE VEGGIE", 250.00, "Veg", d4, nu, restaurants_data[1][0]),
+
+        (str(uuid.uuid4()), "FARM HOUSE", 300.00, "Veg", d1, nu, restaurants_data[4][0]),
+        (str(uuid.uuid4()), "PEPPY PANEER", 350.00, "Veg", d2, nu, restaurants_data[4][0]),
+        (str(uuid.uuid4()), "MEXICAN GREEN WAVE", 500.00, "Veg", d3, nu, restaurants_data[4][0]),
+        (str(uuid.uuid4()), "DELUXE VEGGIE", 250.00, "Veg", d4, nu, restaurants_data[4][0]),
+
+        (str(uuid.uuid4()), "FARM HOUSE", 300.00, "Veg", d1, nu, restaurants_data[7][0]),
+        (str(uuid.uuid4()), "PEPPY PANEER", 350.00, "Veg", d2, nu, restaurants_data[7][0]),
+        (str(uuid.uuid4()), "MEXICAN GREEN WAVE", 500.00, "Veg", d3, nu, restaurants_data[7][0]),
+        (str(uuid.uuid4()), "DELUXE VEGGIE", 250.00, "Veg", d4, nu, restaurants_data[7][0]),
+
+        (str(uuid.uuid4()), "Big Mac", 350.00, "nonVeg", m1, nu, restaurants_data[2][0]),
+        (str(uuid.uuid4()), "Egg McMuffin", 80.00, "nonVeg", m2, nu, restaurants_data[2][0]),
+        (str(uuid.uuid4()), "Sausage Burrito", 230.00, "nonVeg", m3, nu, restaurants_data[2][0]),
+        (str(uuid.uuid4()), "Chicken McNuggets", 180.00, "nonVeg", m4, nu, restaurants_data[2][0]),
+
+        (str(uuid.uuid4()), "Big Mac", 350.00, "nonVeg", m1, nu, restaurants_data[5][0]),
+        (str(uuid.uuid4()), "Egg McMuffin", 80.00, "nonVeg", m2, nu, restaurants_data[5][0]),
+        (str(uuid.uuid4()), "Sausage Burrito", 230.00, "nonVeg", m3, nu, restaurants_data[5][0]),
+        (str(uuid.uuid4()), "Chicken McNuggets", 180.00, "nonVeg", m4, nu, restaurants_data[5][0]),
+
+        (str(uuid.uuid4()), "Big Mac", 350.00, "nonVeg", m1, nu, restaurants_data[8][0]),
+        (str(uuid.uuid4()), "Egg McMuffin", 80.00, "nonVeg", m2, nu, restaurants_data[8][0]),
+        (str(uuid.uuid4()), "Sausage Burrito", 230.00, "nonVeg", m3, nu, restaurants_data[8][0]),
+        (str(uuid.uuid4()), "Chicken McNuggets", 180.00, "nonVeg", m4, nu, restaurants_data[8][0]),
     ]
 
     for record in restaurants_data:
