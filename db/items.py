@@ -30,6 +30,29 @@ def fetch_items_by_restaurant_id(restaurant_id):
     return items_list
 
 
+def fetch_item_by_id(item_id):
+    db = sqlite3.connect("foodDelivery.db")
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM items WHERE id = ?", (item_id,))
+    record = cursor.fetchone()
+
+    if not record:
+        db.close()
+        return None
+
+    item_dict = {
+        "id": record[0],
+        "name": record[1],
+        "price": record[2],
+        "type": record[3],
+        "imgUrl": record[4],
+        "nutritionalUrl": record[5]
+    }
+
+    db.close()
+    return item_dict
+
+
 def add_item(data, restaurant_id):
     db = sqlite3.connect("foodDelivery.db")
     cursor = db.cursor()

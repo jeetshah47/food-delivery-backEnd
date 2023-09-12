@@ -2,6 +2,8 @@ import sqlite3
 import uuid
 import json
 
+from db.order import add_order
+
 
 def add_sample_data():
     db = sqlite3.connect("foodDelivery.db")
@@ -93,8 +95,11 @@ def add_sample_data():
 
     for record in users_data:
         cursor.execute("INSERT INTO users (id, email, password, first_name, last_name, ph_number, address) VALUES (?, ?, ?, ?, ?, ?, ?)", record)
-
     db.commit()
     db.close()
+
+    add_order(users_data[0][0],
+              [items_data[0][0], items_data[1][0], items_data[0][0]],
+              restaurants_data[0][0])
 
 

@@ -3,6 +3,9 @@ import sqlite3
 import uuid
 
 from db.init import check_value_exists
+from db.items import fetch_item_by_id
+from db.restaurant import fetch_restaurant_by_id
+from db.user import fetch_user_by_id
 
 
 def add_order(user_id, item_id_list, restaurant_id):
@@ -70,9 +73,9 @@ def fetch_order(order_id=None, user_id=None, restaurant_id=None):
         record = {
             "id": row[0],
             "order_id": row[1],
-            "user_id": row[2],
-            "item_id": row[3],
-            "restaurant_id": row[4],
+            "user_record": fetch_user_by_id(row[2]),
+            "item_record": fetch_item_by_id(row[3]),
+            "restaurant_record": fetch_restaurant_by_id(row[4]),
             "createdDateTime": row[5],
             "deliveredDateTime": row[6],
             "status": row[7]
